@@ -16,7 +16,7 @@ jobs:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         APP_NAME: ${{ 'booking-bot' }}
       run: |
-        cd ./bookling-bot/BookingApiBot
+        cd ./booking-bot/BookingApiBot
         docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
         heroku container:push web -a $APP_NAME
         heroku container:release web -a $APP_NAME
