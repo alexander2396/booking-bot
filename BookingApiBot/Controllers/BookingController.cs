@@ -16,7 +16,7 @@ namespace BookingApiBot.Controllers
         private static readonly JsonParser jsonParser = new JsonParser(JsonParser.Settings.Default.WithIgnoreUnknownFields(true));
 
         [HttpPost]
-        public ContentResult DialogAction()
+        public JsonResult DialogAction()
         {
             WebhookRequest request;
 
@@ -43,7 +43,7 @@ namespace BookingApiBot.Controllers
             };
 
             string responseJson = response.ToString();
-            return Content(responseJson, "application/json");
+            return Json(responseJson);
         }
     }
 }
